@@ -15,7 +15,17 @@ definition:
 class Song
   attr_accessor :name, :artist_name
   @@all = []
-
+  def self.new_by_name(the_name_of_song)
+    song = self.new
+    song.name = the_name_of_song
+    song
+  end
+  
+  def self.create_by_name(name)
+    song = self.new_by_name(name)
+    @@all << song
+  end
+  
   def self.all
     @@all
   end
